@@ -97,7 +97,7 @@ export default function TextForm(props) {
         </p>
         <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
         <h3>Preview</h3>
-        <p>{text.length>0?text:"Enter something in the TextBox above to preview it here"}</p>
+        <p>{text.length>0?text:"Enter something in the above TextBox to preview it here"}</p>
       </div>
       </div>
     </>
