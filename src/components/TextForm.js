@@ -72,32 +72,32 @@ export default function TextForm(props) {
             style={{backgroundColor: props.mode==='dark'?'#d2d3db':'white',fontSize:'20px', border: props.mode==='dark'?'4px solid white':'1px solid black'}}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert To Uppercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLowClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>
           Convert To Lowercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleSpeakClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleSpeakClick}>
           Speak
         </button>
-        <button className="btn btn-primary mx-2" onClick={handlecapClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handlecapClick}>
           capitalize case
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCopyClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleExtraSpace}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpace}>
           Remove Extra Space
         </button>
       <div className="container my-3">
         <h2>Your Text Summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} charaters
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} charaters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
         <h3>Preview</h3>
-        <p>{text.length>0?text:"Enter somthing in the TextBox above to preview it here"}</p>
+        <p>{text.length>0?text:"Enter something in the TextBox above to preview it here"}</p>
       </div>
       </div>
     </>
